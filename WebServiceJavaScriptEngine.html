@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Web Server JavaScript Engine</title>
+	</head>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZYU-9gR-aU5RWWci2WZz4Z37Qya2XyHY&signed_in=true&callback=initMap" async defer></script>
+	<script>
+		var ws = new WebSocket("ws://127.0.0.1:22114/");
+		var directionsService;
+		var UNISC;
+		var path;
+		var boxes;
+		var i;
+		var bounds;
+		var returnMessage;
+		var routeBoxer;
+		var northEast;
+		var southWest;
+		var array;
+		var start;
+		var request;
+
+		function initMap () {
+			UNISC = new google.maps.LatLng(-29.698103, -52.438408);
+			directionsService = new google.maps.DirectionsService();
+			var oHead = document.getElementsByTagName('HEAD').item(0);
+			var oScript= document.createElement("script");
+			oScript.type = "text/javascript";
+			oScript.src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/src/RouteBoxer.js";
+			oHead.appendChild(oScript);
+			console.log("initialized");
+		}
+
+		ws.onmessage = function (evt) {
+			console.log("received message " + evt.data);
+			array = evt.data.split(" ");
+			start = new google.maps.LatLng(parseFloat(array[0]), parseFloat(array[1]));
+			request = {
+				origin: start,
+				destination: UNISC,
+				travelMode: google.maps.TravelMode.DRIVING,
+				unitSystem: google.maps.UnitSystem.METRIC,
+				region: "BR"
+			};
+			routeBoxer = new RouteBoxer();
+			directionsService.route(request, function(result, status) {
+				console.log("route returned; status = " + status);
+				if (status == google.maps.DirectionsStatus.OK) {
+					path = result.routes[0].overview_path;
+					boxes = routeBoxer.box(path, parseFloat(array[2]));
+					returnMessage = "";
+					for (i = 0; i < boxes.length; i++) {
+						bounds = boxes[i];
+						northEast = bounds.getNorthEast();
+						southWest = bounds.getSouthWest();
+						returnMessage += northEast.lat() + " " + northEast.lng() + " " + southWest.lat() + " " + southWest.lng() + " ";
+					}
+					ws.send(returnMessage);
+					console.log("returning " + returnMessage);
+				}
+			});
+		};
+	</script>
+	<body>
+	</body>
+</html>
