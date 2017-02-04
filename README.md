@@ -10,9 +10,9 @@ But that's not all! We also required a method from the [Google Maps API](https:/
 
 I've decided to host this project here because I think that several of the solutions that I found could be useful references for other programmers. I'll post as much instructions as I can, but I can't guarantee it will run.
 
-This project was made with [NetBeans](https://en.wikipedia.org/wiki/Netbeans) on the server side and [Android Studio](https://en.wikipedia.org/wiki/Android_Studio) on the Android side. It contains the following libraries, that are copyrights of their respective owners: [Jetty](https://en.wikipedia.org/wiki/Jetty_(web_server)) and [MySQL Connector](https://en.wikipedia.org/wiki/MySQL_Connector/ODBC). The necessary JARs (and maybe some unnecessary ones) have been included.
+This project was made with [NetBeans](https://en.wikipedia.org/wiki/Netbeans) on the server side and [Android Studio](https://en.wikipedia.org/wiki/Android_Studio) on the Android side. It contains the following libraries, that are copyrights of their respective owners: [Jetty](https://en.wikipedia.org/wiki/Jetty_(web_server)) and [MySQL Connector](https://en.wikipedia.org/wiki/MySQL_Connector/ODBC) on the server side, [Google Maps API](https://en.wikipedia.org/wiki/Google_Maps#Google_Maps_API) on the client side. The necessary JARs (and maybe some unnecessary ones) have been included.
 
-I'm waiting permission from one of my friends to post the Android side here, since they were responsible for it, while I was responsible for the server side.
+I wanted to upload the Android Studio project folder, but it contained more than 1&thinsp;600 files that could not be deleted without messing with the build process, so I just uploaded the source files. If you want to build this, you'll have to create a new project and add the sources to it. If some problems arise then, let me know and I'll try to help. Also, neither of us own the domain we used for the package names. If someone owns it, let me know and I'll change it.
 
 ## Instructions
 
