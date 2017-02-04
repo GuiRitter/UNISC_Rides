@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.com.een_gmb_gar.unisc_rides.ChatActivity"
+    android:orientation="vertical"
+    >
+    <ListView
+        android:id="@+id/actChat_chat_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </ListView>
+    <EditText
+        android:id="@+id/actChat_enterMsg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textAlignment="center"
+        />
+    <Button
+        android:id="@+id/actChat_send"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:onClick="bt_chat_send"
+        android:textAlignment="center"
+        style="@style/TextAppearance.AppCompat.Medium"
+        />
+</LinearLayout>

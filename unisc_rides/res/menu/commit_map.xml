@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:title="@string/user_session"
+        android:id="@+id/action_insert_map"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="always"
+        />
+
+    <item
+        android:title="@string/user_session"
+        android:id="@+id/action_remove_map"
+        android:icon="@android:drawable/ic_notification_clear_all"
+        android:showAsAction="always"
+        />
+
+
+</menu>

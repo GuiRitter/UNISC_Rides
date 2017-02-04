@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.een_gmb_gar.unisc_rides.RegisterRide"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_location"
+        android:textAlignment="center"
+        />
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_locations"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_day_shift"
+        android:textAlignment="center"
+        />
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_shifts"
+        android:textAlignment="center"
+        >
+    </Spinner>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:stretchColumns="0,1">
+
+        <TableRow android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:text="Mon"
+                android:id="@+id/select_monday"
+                android:layout_column="0"
+                />
+            <CheckBox
+                android:text="Tue"
+                android:id="@+id/select_tuesday"
+                android:layout_column="1"
+                />
+            <CheckBox
+                android:text="Wed"
+                android:id="@+id/select_wednesday"
+                android:layout_column="0"
+                />
+        </TableRow>
+        <TableRow android:layout_gravity="center_horizontal">
+            <CheckBox
+                android:text="Thu"
+                android:id="@+id/select_thursday"
+                android:layout_column="0"
+                />
+            <CheckBox
+                android:text="Fri"
+                android:id="@+id/select_friday"
+                android:layout_column="0"
+                />
+            <CheckBox
+                android:text="Sat"
+                android:id="@+id/select_saturday"
+                android:layout_column="0"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:stretchColumns="2"
+        >
+        <TableRow>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/promiscuous"
+                android:id="@+id/is_promiscuous"
+                android:checked="true"
+                android:editable="false"
+                android:paddingRight="5pt"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/available_seats"
+                android:paddingRight="5pt"
+                style="@style/TextAppearance.AppCompat.Medium"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:id="@+id/av_seats"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/range_distance"
+                android:paddingRight="5pt"
+                style="@style/TextAppearance.AppCompat.Medium"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:id="@+id/rng_distance"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/label_avaible_rides"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_rides"
+        style="@style/TextAppearance.AppCompat.Medium"
+        />
+
+    <ListView
+        android:id="@+id/listView_your_rides"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:longClickable="true">
+    </ListView>
+
+</LinearLayout>

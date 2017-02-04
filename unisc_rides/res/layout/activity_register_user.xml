@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.een_gmb_gar.unisc_rides.RegisterUser"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:id="@+id/insert_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:textAlignment="center" />
+    <EditText
+        android:id="@+id/insert_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        android:textAlignment="center"
+        android:inputType="phone" />
+    <EditText
+        android:id="@+id/insert_email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textAlignment="center"
+        android:inputType="textEmailAddress" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:onClick="bt_register_user"
+        />
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.een_gmb_gar.unisc_rides.UserMain"
+    android:orientation="vertical"
+    >
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:stretchColumns="0,1">
+        <TableRow android:layout_gravity="center_horizontal">
+        <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_filter_day"
+                android:textAlignment="center"
+                >
+            </Spinner>
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_filter_shift"
+                android:textAlignment="center"
+                >
+            </Spinner>
+        </TableRow>
+    </TableLayout>
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/actUsrMain_sp_origin"
+        android:textAlignment="center"
+        >
+    </Spinner>
+    <TextView
+        android:id="@+id/label_avaible_rides"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/avaible_rides"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+
+    <ListView
+        android:id="@+id/listView_avaible_rides"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+
+</LinearLayout>
+
